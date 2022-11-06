@@ -1,5 +1,12 @@
-const names = ["nico", "hye", "lin"];
+const nico = {
+  name: "nico",
+  age: 24,
+  addYear() {
+    this.age++;
+  },
+};
 
-const hearts = names.map((item) => item + "💛");
-
-console.log(hearts);
+console.log(nico);
+nico.addYear();
+nico.addYear();
+console.log(nico);
