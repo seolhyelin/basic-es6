@@ -1,12 +1,8 @@
-const nico = {
-  name: "nico",
-  age: 24,
-  addYear() {
-    this.age++;
-  },
-};
+const email = [
+  "fdfs@hma.com",
+  "sdfsdf@gmail.com",
+  "fsdklgjd@naver.com",
+  "tujt@yahoo.kr",
+];
 
-console.log(nico);
-nico.addYear();
-nico.addYear();
-console.log(nico);
+const noMail = email.filter();
