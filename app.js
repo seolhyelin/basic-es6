@@ -1,13 +1,12 @@
 const wrapper = document.querySelector(".wrapper");
 
-const addWelcome = () => {
-  console.log(wrapper);
-  const div = `
-  <div class='hello'>
-  <h1 class='title'>hello</h1>
-  </div>
-  `;
-  wrapper.innerHTML = div;
-};
+const friends = ["me", "lin", "dal", "mark"];
 
-setTimeout(addWelcome, 3000);
+const list = `
+<h1>I love</h1>
+<ul>
+${friends.map((friend) => `<li>${friend} 💜</li>`).join("")}
+</ul>
+`;
+
+wrapper.innerHTML = list;
