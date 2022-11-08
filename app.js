@@ -1,8 +1,13 @@
-const email = [
-  "fdfs@hma.com",
-  "sdfsdf@gmail.com",
-  "fsdklgjd@naver.com",
-  "tujt@yahoo.kr",
-];
+const wrapper = document.querySelector(".wrapper");
 
-const noMail = email.filter();
+const addWelcome = () => {
+  console.log(wrapper);
+  const div = `
+  <div class='hello'>
+  <h1 class='title'>hello</h1>
+  </div>
+  `;
+  wrapper.innerHTML = div;
+};
+
+setTimeout(addWelcome, 3000);
