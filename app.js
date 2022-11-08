@@ -1,15 +1,13 @@
-const styled = (element) => {
-  const el = document.createElement(element);
-  return (args) => {
-    const styles = args[0];
-    el.style = styles;
-    return el;
-  };
-};
+//includes
+const isEmail = (email) => email.includes("@");
+console.log(isEmail("fdfd@fdfdf.com"));
 
-const title = styled("h1")`
-  color: blue;
-  background-color: red;
-`;
-title.innerText = "we just cloned styled components";
-document.body.append(title);
+//repeat
+const CC_NUMBER = "6060";
+const displayName = `${"*".repeat(10)} ${CC_NUMBER}`;
+console.log(displayName);
+
+//startsWith
+const myName = "Ms. hyelin";
+console.log(myName.startsWith("Ms"));
+console.log(myName.endsWith("hyelin"));
