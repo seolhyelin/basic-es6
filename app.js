@@ -1,12 +1,15 @@
-const wrapper = document.querySelector(".wrapper");
+const styled = (element) => {
+  const el = document.createElement(element);
+  return (args) => {
+    const styles = args[0];
+    el.style = styles;
+    return el;
+  };
+};
 
-const friends = ["me", "lin", "dal", "mark"];
-
-const list = `
-<h1>I love</h1>
-<ul>
-${friends.map((friend) => `<li>${friend} 💜</li>`).join("")}
-</ul>
+const title = styled("h1")`
+  color: blue;
+  background-color: red;
 `;
-
-wrapper.innerHTML = list;
+title.innerText = "we just cloned styled components";
+document.body.append(title);
