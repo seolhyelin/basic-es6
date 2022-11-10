@@ -1,12 +1,20 @@
-//swapping
-let mon = "Sat";
-let sat = "Mon";
+//array spread
+const friends = [1, 2, 3];
+const family = ["a", "b", "c"];
 
-[sat, mon] = [mon, sat];
+console.log([...friends, ...family]);
+console.log(friends);
+console.log(...friends);
 
-//skipping
-const days = ["m", "t", "w", "t", "f"];
+//object spread
+const sexy = {
+  name: "nico",
+  age: 24,
+};
 
-const [, , , t, f] = days;
+const hello = {
+  sexy: true,
+  hello: "hello",
+};
 
-console.log(t, f);
+console.log({ ...sexy, ...hello });
