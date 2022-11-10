@@ -1,14 +1,12 @@
-function saveSettings({ notifications, color: { theme } }) {
-  console.log(color);
-}
+//swapping
+let mon = "Sat";
+let sat = "Mon";
 
-saveSettings({
-  notifications: {
-    follow: true,
-    alert: true,
-    mkt: false,
-  },
-  color: {
-    theme: "blue",
-  },
-});
+[sat, mon] = [mon, sat];
+
+//skipping
+const days = ["m", "t", "w", "t", "f"];
+
+const [, , , t, f] = days;
+
+console.log(t, f);
