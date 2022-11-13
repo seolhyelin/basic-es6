@@ -1,20 +1,17 @@
-//array spread
-const friends = [1, 2, 3];
-const family = ["a", "b", "c"];
+const friends = ["nico", "lyn"];
 
-console.log([...friends, ...family]);
-console.log(friends);
-console.log(...friends);
+const newFriends = [...friends, "dal"];
+// console.log(newFriends);
 
-//object spread
-const sexy = {
-  name: "nico",
+const nico = {
+  username: "nico",
+};
+
+// console.log({ ...nico, password: 1234 });
+const lastName = prompt("last name");
+const user = {
+  users: "nico",
   age: 24,
+  ...(lastName !== "" && { lastName }),
 };
-
-const hello = {
-  sexy: true,
-  hello: "hello",
-};
-
-console.log({ ...sexy, ...hello });
+console.log(user);
