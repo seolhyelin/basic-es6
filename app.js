@@ -1,11 +1,6 @@
-const friends = ["g", "h", "a", "r", "3", "p", "s"];
-// const addHeart = (item, index, array) => console.log(item, index, array);
-// friends.forEach(addHeart);
+const amIcute = new Promise((resolve, reject) => {
+  setTimeout(resolve, 3000, "yes you are");
+});
 
-for (const friend of friends) {
-  if (friend === "p") {
-    break;
-  } else {
-    console.log(friend);
-  }
-}
+console.log(amIcute);
+// setInterval(console.log, 1000, amIcute);
