@@ -1,5 +1,17 @@
 const amIcute = new Promise((resolve, reject) => {
-  setTimeout(reject, 3000, "ugly");
+  resolve(3);
 });
 
-amIcute.then((result) => console.log(result).catch((err) => console.log(err)));
+const timesThird = (n) => n * 2;
+
+amIcute
+  .then(timesThird)
+  .then(timesThird)
+  .then(timesThird)
+  .then(timesThird)
+  .then(timesThird)
+  .then(() => {
+    throw Error("wrong!");
+  })
+  .then((lastNumber) => console.log(lastNumber))
+  .catch((err) => console.log(err));
