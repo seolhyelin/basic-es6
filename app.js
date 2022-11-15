@@ -1,6 +1,5 @@
 const amIcute = new Promise((resolve, reject) => {
-  setTimeout(resolve, 3000, "yes you are");
+  setTimeout(reject, 3000, "ugly");
 });
 
-console.log(amIcute);
-// setInterval(console.log, 1000, amIcute);
+amIcute.then((result) => console.log(result).catch((err) => console.log(err)));
