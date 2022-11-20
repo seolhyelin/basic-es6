@@ -1,6 +1,7 @@
-const p1 = new Promise((res, reject) => {
-  setTimeout(reject, 4000, "fist");
-})
-  .then((value) => console.log(value))
-  .catch(() => console.log("err"))
-  .finally(() => console.log("im done"));
+fetch("https://yts.torrentbay.to/api/v2/list_movies.json")
+  .then((res) => {
+    console.log(res);
+    return res.json();
+  })
+  .then((json) => console.log(json))
+  .catch((e) => console.log(`🔥${e}`));
