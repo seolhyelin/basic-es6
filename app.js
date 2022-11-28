@@ -1,9 +1,15 @@
 const getMoviesAsync = async () => {
   try {
-    const response = await fetch("https://yts.mx/api/v2/list_movies.json");
-    const json = await response.json();
-    console.log(json);
-    // throw Error("im hungry");
+    const [moviesRes, upcomingRes] = await Promise.all([
+      fetch("https://yts.mx/api/v2/movie_suggestions.json?movie_id=100"),
+      fetch("https://yts.mx/api/v2/list_movies.json"),
+    ]);
+    const [movies, upcoming] = await Promise.all([
+      moviesRes.json(),
+      upcomingRes.json(),
+    ]);
+
+    console.log(movies, upcoming);
   } catch (e) {
     console.log(e);
   } finally {
