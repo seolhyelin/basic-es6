@@ -6,18 +6,18 @@ class Counter {
     this.minusBtn = document.getElementById(minusId);
     this.addEventListeners();
   }
-  addEventListeners() {
+  addEventListeners = () => {
     this.plusBtn.addEventListener("click", this.increase);
     this.minusBtn.addEventListener("click", this.decrease);
-  }
-  increase() {
+  };
+  increase = () => {
     this.count = this.count + 1;
     this.repaintCounter();
-  }
-  decrease() {
+  };
+  decrease = () => {
     this.count = this.count - 1;
     this.repaintCounter();
-  }
+  };
   repaintCounter() {
     this.counter.innerText = this.count;
   }
