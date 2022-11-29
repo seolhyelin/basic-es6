@@ -1,48 +1,26 @@
-class User {
-  constructor({ username, lastName, email, password }) {
-    this.username = username;
-    this.lastName = lastName;
-    this.email = email;
-    this.password = password;
+class Counter {
+  constructor({ initialNumber = 0, counterId, plusId, minusId }) {
+    this.count = initialNumber;
+    this.counter = document.getElementById(counterId);
+    this.plusBtn = document.getElementById(plusId);
+    this.minusBtn = document.getElementById(minusId);
+    this.addEventListeners();
   }
-  sayHello() {
-    console.log(`hello ${this.username}`);
+  addEventListeners() {
+    this.plusBtn.addEventListener("click", this.increase);
+    this.minusBtn.addEventListener("click", this.decrease);
   }
-  getProfile() {
-    console.log(`${this.username} ${this.email} ${this.password}`);
+  increase() {
+    this.count = this.count + 1;
+    this.repaintCounter();
   }
-  updatePassword(newPassword, currentPassword) {
-    if (currentPassword === this.password) {
-      this.password = newPassword;
-    } else {
-      console.log("can't change");
-    }
+  decrease() {
+    this.count = this.count - 1;
+    this.repaintCounter();
   }
-}
-
-const user = new User({
-  username: "lin",
-  lastName: "hye",
-  email: "asd@com",
-  password: "1234",
-});
-
-class Admin extends User {
-  constructor({ username, lastName, email, password, superAdmin, isActive }) {
-    super({ username, lastName, email, password });
-    this.superAdmin = superAdmin;
-    this.isActive = isActive;
-  }
-  deleteWebsite() {
-    console.log("deleting....");
+  repaintCounter() {
+    this.counter.innerText = this.count;
   }
 }
 
-const admin = new Admin({
-  username: "lin",
-  lastName: "hye",
-  email: "asd@com",
-  password: "1234",
-  superAdmin: true,
-  isActive: true,
-});
+new Counter({ counterId: "count", plusId: "add", minusId: "minus" });
